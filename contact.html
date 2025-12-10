@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Portfolio</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="nav-left">
+    <h2 class="logo-name">Thaduri Omprakash</h2>
+    <p class="logo-tag muted">SQL • POWER BI • PYTHON</p>
+  </div>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+
+  <nav class="nav-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="Experience.html" class="nav-link">Experience</a>
+    <a href="projects.html" class="nav-link">Projects</a>
+    <a href="skills.html" class="nav-link">Skills</a>
+    <a href="certificates.html" class="nav-link">Certificates</a>
+    <a href="resume.html" class="nav-link">Resume</a>
+    <a href="about.html" class="nav-link">About me</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+  </nav>
+</header>
+
+
+<!-- ================= CONTACT SECTION ================= -->
+<section class="contact-section">
+
+  <h1 class="contact-title">
+    Let’s Connect & Collaborate <span>💙</span>
+  </h1>
+
+  <p class="contact-subtext">
+    Whether it’s a new project, a collaboration, or just to say hi — I’d love to hear from you!
+  </p>
+
+  <!-- SOCIAL ICONS -->
+  <div class="contact-socials">
+    <a href="https://github.com/ThaduriOmprakash" class="social-icon"><img src="assets/images/github.png" alt=""></a>
+    <a href="https://www.linkedin.com/in/thaduriomprakash/" class="social-icon"><img src="assets/images/linkedin.png" alt=""></a>
+    <a href="mailto:thaduriomprakash97@gmail.com" class="social-icon"><img src="assets/images/gmail.png" alt=""></a>
+    <a href="https://wa.me/9347152075" class="social-icon"><img src="assets/images/whatsapp.png" alt=""></a>
+    <a href="https://www.instagram.com/thaduriomprakash" class="social-icon"><img src="assets/images/insta.png" alt=""></a>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <form class="contact-form" onsubmit="submitContactForm(event)">
+
+    <input id="name" type="text" placeholder="Your Name">
+
+    <input id="subject" type="text" placeholder="Subject">
+
+    <textarea id="message" placeholder="Your Message..."></textarea>
+
+    <button type="submit" class="contact-btn">
+      🚀 Send Message
+    </button>
+
+  </form>
+
+  <!-- SUCCESS MODAL -->
+  <div id="successModal" class="success-modal">
+    <div class="success-card">
+      <h2>🎉 Message Sent!</h2>
+      <p>Thank you for reaching out — I’ll get back to you soon.</p>
+      <button onclick="document.getElementById('successModal').classList.remove('open')" class="btn-ok">
+        OK
+      </button>
+    </div>
+  </div>
+
+</section>
+
+
+<footer>
+  © Thaduri Omprakash — Portfolio
+</footer>
+
+
+<script src="js/common.js"></script>
+
+<script>
+  function toggleMenu(){
+    document.querySelector('.hamburger').classList.toggle('active');
+    document.querySelector('.nav-menu').classList.toggle('open');
+  }
+</script>
+
+<script>
+async function submitContactForm(event){
+    event.preventDefault();
+
+    const sheetURL = "https://script.google.com/macros/s/AKfycbxsPI6q0dRwxiZucBAv_2y0_Iztyw4vCpQyrr3OxUIZG4s3XsStxt-RpeV_boSt-ExNoA/exec";
+
+    const name = document.getElementById("name").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Basic validation
+    if(!name || !subject || !message){
+        alert("Please fill all fields before sending.");
+        return;
+    }
+
+    // 🔥 Show popup instantly (no waiting!)
+    document.getElementById("successModal").classList.add("open");
+
+    // Clear form instantly
+    document.querySelector(".contact-form").reset();
+
+    // 🔥 Send to Google Sheets silently in background
+    try {
+        fetch(sheetURL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, subject, message })
+        });
+    } catch (error) {
+        console.error("Background send failed:", error);
+    }
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skills — Portfolio</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/skills.css">
+</head>
+<body>
+
+<div id="particles"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="nav-left">
+    <h2 class="logo-name">Thaduri Omprakash</h2>
+    <p class="logo-tag muted">SQL • POWER BI • PYTHON</p>
+  </div>
+
+  <!-- Hamburger button -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav class="nav-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="Experience.html" class="nav-link">Experience</a>
+    <a href="projects.html" class="nav-link">Projects</a>
+    <a href="skills.html" class="nav-link active">Skills</a>
+    <a href="certificates.html" class="nav-link">Certificates</a>
+    <a href="resume.html" class="nav-link">Resume</a>
+    <a href="about.html" class="nav-link">About me</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="skills-title fade-up delay-1">SKILLS ⚡</div>
+  <p class="skills-subtext fade-up delay-2">
+    Technologies I use to build, analyze & automate ideas.
+  </p>
+
+<section class="skills-shell fade-up delay-3">
+  <div class="skills-cloud fade-up delay-4">
+
+    <!-- all bubble blocks remain unchanged below -->
+    <div class="skill-bubble">
+      <div class="skill-icon"><img src="assets/images/mysql.svg" alt="SQL"></div>
+      <span class="skill-label">SQL</span>
+    </div>
+
+    <div class="skill-bubble">
+      <div class="skill-icon"><img src="assets/images/bi.svg" alt="Power BI"></div>
+      <span class="skill-label">Power BI</span>
+    </div>
+
+    <div class="skill-bubble">
+      <div class="skill-icon"><img src="assets/images/python.svg" alt="Python"></div>
+      <span class="skill-label">Python</span>
+    </div>
+
+    <div class="skill-bubble">
+      <div class="skill-icon"><img src="assets/images/excel.svg" alt="Excel"></div>
+      <span class="skill-label">Excel</span>
+    </div>
+
+    <div class="skill-bubble">
+      <div class="skill-icon"><img src="assets/images/html.svg" alt="HTML"></div>
+      <span class="skill-label">HTML</span>
+    </div>
+
+    <div class="skill-bubble">
+      <div class="skill-icon"><img src="assets/images/css.svg" alt="CSS"></div>
+      <span class="skill-label">CSS</span>
+    </div>
+
+    <div class="skill-bubble">
+      <div class="skill-icon"><img src="assets/images/streamlit.svg" alt="Streamlit"></div>
+      <span class="skill-label">Streamlit</span>
+    </div>
+
+    <div class="skill-bubble">
+      <div class="skill-icon"><img src="assets/images/numpy.svg" alt="NumPy"></div>
+      <span class="skill-label">NumPy</span>
+    </div>
+
+    <div class="skill-bubble">
+      <div class="skill-icon"><img src="assets/images/pandas.svg" alt="Pandas"></div>
+      <span class="skill-label">Pandas</span>
+    </div>
+
+    <div class="skill-bubble">
+      <div class="skill-icon"><img src="assets/images/jupyter.png" alt="Jupyter Notebook"></div>
+      <span class="skill-label">Jupyter</span>
+    </div>
+
+    <div class="skill-bubble">
+      <div class="skill-icon"><img src="assets/images/vscode.svg" alt="VS Code"></div>
+      <span class="skill-label">VS Code</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- grid fades in after cloud -->
+<div class="skills-grid fade-up delay-5">
+
+  <div class="skill-box">
+    <h3>Languages</h3>
+    <ul>
+      <li>Python</li>
+      <li>MySQL</li>
+    </ul>
+  </div>
+
+  <div class="skill-box">
+    <h3>Data Tools</h3>
+    <ul>
+      <li>Power BI</li>
+      <li> Ms Excel</li>
+      <li>Pandas</li>
+      <li>NumPy</li>
+    </ul>
+  </div>
+
+  <div class="skill-box">
+    <h3>Development</h3>
+    <ul>
+      <li>Streamlit</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>VS Code</li>
+      <li>Jupyter Notebook</li>
+    </ul>
+  </div>
+
+  <div class="skill-box">
+    <h3>Core Concepts</h3>
+    <ul>
+      <li>Data Modeling & ETL Pipelines</li>
+      <li>KPI Engineering & Metric Computation</li>
+      <li>Dashboard & BI Analytics</li>
+      <li>Data Validation & Quality Automation</li>
+      <li>SQL Querying & Data Warehousing Concepts</li>
+      <li>Comparative Analytics & Ranking Algorithms</li>
+      <li>Operational Analytics (Transport Systems)</li>
+      <li>Workflow Automation & Reporting Optimization</li>
+    </ul>
+  </div>
+
+  <div class="skill-box">
+    <h3>Soft Skills</h3>
+    <ul>
+      <li>Teamwork</li>
+      <li>Problem Solving</li>
+      <li>Creativity</li>
+      <li>Adaptability</li>
+      <li>Communication</li>
+    </ul>
+  </div>
+
+</div>
+</main>
+
+
+<footer>
+  <p>© Thaduri Omprakash — Portfolio</p>
+</footer>
+
+<script src="js/common.js"></script>
+<script>
+  // same toggle used on home page
+  function toggleMenu(){
+    document.querySelector('.hamburger').classList.toggle('active');
+    document.querySelector('.nav-menu').classList.toggle('open');
+  }
+</script>
+<script src="js/skills.js"></script>
+<script>
+const gridItems = document.querySelectorAll(".skill-box");
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("reveal");
+        }
+    });
+},{
+    threshold:0.2
+});
+
+gridItems.forEach(item=>observer.observe(item));
+</script>
+
+</body>
+</html>

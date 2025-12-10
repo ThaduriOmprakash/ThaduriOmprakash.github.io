@@ -1,0 +1,140 @@
+/* ========= Theme & Base ========= */
+:root{
+  --bg:#030b18;
+  --card: rgba(255,255,255,0.04);
+  --accent: #00EAFF;
+  --accent-2: #00FFD1;
+  --text:#E8F8FA;
+  --muted: rgba(255,255,255,0.62);
+  --container-pad: 6%;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  background: linear-gradient(180deg,#041020 0%, #041020 100%);
+  color:var(--text);
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+}
+
+/* ========= Particles ========= */
+#particles{position:fixed;inset:0;z-index:-3;pointer-events:none;overflow:hidden}
+.particle{position:absolute;border-radius:50%;background:var(--accent);opacity:0.85;filter:blur(0.2px);transform:translateY(100vh)}
+@keyframes floatUp{0%{transform:translateY(100vh)}100%{transform:translateY(-10vh)}}
+
+/* ========= Header Base ========= */
+header{
+  position:fixed;top:0;left:0;right:0;padding:12px var(--container-pad);
+  display:flex;justify-content:flex-end;align-items:center;z-index:1200;
+  background:linear-gradient(180deg, rgba(0,0,0,0.18), transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+
+/* ========= General Page Structure ========= */
+.section{padding:96px var(--container-pad) 56px}
+.section-title{color:var(--accent);font-size:clamp(20px,3vw,28px);text-align:center;margin-bottom:22px}
+.muted{color:var(--muted)}
+
+.card{
+  background:var(--card);
+  border-radius:12px;
+  padding:18px;
+  border:1px solid rgba(255,255,255,0.03);
+  backdrop-filter:blur(8px);
+}
+
+/* ========= Footer ========= */
+footer{text-align:center;padding:26px 0;color:var(--muted);font-size:.95rem;margin-top:20px}
+
+/* Buttons shared globally */
+.contact-links{margin-top:24px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+.contact-btn,.resume-btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:12px 22px;min-width:170px;height:48px;border-radius:40px;
+  text-decoration:none;color:var(--text);background:rgba(255,255,255,0.04);
+  border:1px solid rgba(0,234,255,0.22);font-size:1rem;font-weight:500;
+  transition:all .25s ease;
+}
+.contact-btn:hover,.resume-btn:hover{
+  background:rgba(0,234,255,0.1);border-color:var(--accent);transform:translateY(-3px);
+  box-shadow:0 10px 20px rgba(0,234,255,0.15);
+}
+.resume-btn{border-color:rgba(0,255,209,0.25);}
+.resume-btn:hover{background:rgba(0,255,209,0.12);border-color:var(--accent-2);}
+
+/* ========= HEADER — YOUR CUSTOM NAV ========= */
+
+.site-header{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 5%;
+    background:#030b18;
+    position:fixed;
+    top:0; left:0;
+    z-index:2000;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+/* LEFT SIDE */
+.nav-left{display:flex;flex-direction:column;line-height:1.2;}
+.logo-name{font-size:22px;font-weight:700;}
+.logo-tag{font-size:13px;margin-top:2px;letter-spacing:0.5px;}
+
+/* RIGHT MENU — NO UNDERLINE VERSION */
+.nav-menu{display:flex;gap:32px;}
+.nav-menu .nav-link{
+    color:var(--text);
+    font-size:15px;font-weight:500;
+    text-decoration:none;
+    transition:.3s;
+    padding-bottom:6px;
+}
+
+/* Hover/Active Effect WITHOUT underline */
+.nav-menu .nav-link:hover{ color:#00aaff; }
+.nav-menu .nav-link.active{ color:#00aaff; }
+
+/* -------------- HAMBURGER MENU -------------- */
+.hamburger{
+    display:none;flex-direction:column;gap:5px;
+    cursor:pointer;z-index:3000;
+}
+.hamburger span{
+    width:26px;height:3px;background:white;border-radius:3px;transition:.3s;
+}
+
+/*********** MOBILE MENU ***********/
+@media(max-width:900px){
+
+    .hamburger{ display:flex; }
+
+    .nav-menu{
+        position:fixed;
+        top:60px; right:-100%;
+        width:200px;
+        background:#03101d;
+        border-left:1px solid #005a8a65;
+        display:flex;flex-direction:column;gap:20px;
+        padding:20px;transition:.35s ease;
+    }
+
+    .nav-menu.open{ right:0; }
+
+    .nav-menu .nav-link{ font-size:15px; padding:8px 2px; width:100%; }
+
+    /* X animation */
+    .hamburger.active span:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+    .hamburger.active span:nth-child(2){ opacity:0; }
+    .hamburger.active span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
+
+    /* ensure underline is fully removed mobile too */
+    .nav-menu .nav-link::after{ display:none !important; }
+}
+
+/* Particles Hidden On Mobile */
+@media(max-width:900px){ header{padding:10px 4%;}  }

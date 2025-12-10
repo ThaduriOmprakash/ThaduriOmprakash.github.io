@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home — Portfolio</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+<div id="particles"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+    <div class="nav-left">
+        <h2 class="logo-name">Thaduri Omprakash</h2>
+        <p class="logo-tag muted">SQL • POWER BI • PYTHON</p>
+    </div>
+
+    <!-- Hamburger button -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="nav-menu" id="mobileMenu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="Experience.html" class="nav-link">Experience</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="certificates.html" class="nav-link">Certificates</a>
+        <a href="resume.html" class="nav-link">Resume</a>
+        <a href="about.html" class="nav-link">About me</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+</header>
+
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="hero-container">
+
+        <!-- Profile Image -->
+        <div class="profile-img">
+            <img src="assets/images/profile1.png" alt="profile">
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="hero-content fade-in">
+            <h1>Hi, I’m <span class="highlight">Thaduri Omprakash</span></h1>
+
+            <p class="role-title">
+                Data Analyst | Data Engineer | Business Intelligence Analyst
+            </p>
+
+            <!-- Tags -->
+            <div class="tag-row">
+                <span class="tag">SQL</span>
+                <span class="tag">Power BI</span>
+                <span class="tag">Python</span>
+                <span class="tag">MS Excel</span>
+            </div>
+
+            <!-- Info Cards -->
+            <div class="info-grid">
+                <div class="info-box">
+                    <b>📍 Location</b>
+                    <p>Hyderabad, India</p>
+                </div>
+
+                <div class="info-box">
+                    <b>💼 Expertise</b>
+                    <p>SQL • Power BI</p>
+                </div>
+
+                <div class="info-box">
+                    <b>📨 Contact</b>
+                    <p>thaduriomprakash97@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CONNECT SECTION ================= -->
+<section class="connect-section fade-in">
+    <h2 class="connect-heading">Connect</h2>
+
+    <div class="social-row">
+        <a href="https://github.com/ThaduriOmprakash" class="icon github"></a>
+        <a href="https://www.linkedin.com/in/thaduriomprakash/" class="icon linkedin"></a>
+        <a href="mailto:thaduriomprakash97@gmail.com" class="icon mail"></a>
+        <a href="https://wa.me/9347152075" class="icon whatsapp"></a>
+        <a href="https://www.instagram.com/thaduriomprakash?igsh=NGVwdThoNzA2aGg4" class="icon instagram"></a>
+    </div>
+</section>
+
+
+
+<footer><p>© Thaduri Omprakash — Portfolio</p></footer>
+
+<script src="js/common.js"></script>
+<script>
+function toggleMenu(){
+    document.querySelector('.hamburger').classList.toggle('active');
+    document.querySelector('.nav-menu').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

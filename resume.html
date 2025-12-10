@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume — Thaduri Omprakash</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/resume.css">
+</head>
+<body>
+
+<div id="particles"></div>
+
+<header class="site-header">
+  <div class="nav-left">
+    <h2 class="logo-name">Thaduri Omprakash</h2>
+    <p class="logo-tag muted">SQL • POWER BI • PYTHON</p>
+  </div>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+
+  <nav class="nav-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="Experience.html" class="nav-link">Experience</a>
+    <a href="projects.html" class="nav-link">Projects</a>
+    <a href="skills.html" class="nav-link">Skills</a>
+    <a href="certificates.html" class="nav-link">Certificates</a>
+    <a href="resume.html" class="nav-link active">Resume</a>
+    <a href="about.html" class="nav-link">About me</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </nav>
+</header>
+
+
+<main class="resume-container">
+
+  <h1 class="resume-title fade-up">Resume</h1>
+  <p class="resume-subtext fade-up">Your complete professional snapshot in one place.</p>
+
+  <!-- Download Resume Button -->
+  <a href="assets/images/Thaduri_Omprakash_Resume.pdf" target="_blank" class="resume-download fade-up">
+    📄 Download Resume
+  </a>
+
+  <!-- Resume Preview -->
+  <div class="resume-preview fade-up">
+    <img src="assets/images/resume.png" alt="Resume Preview">
+
+    <div class="resume-hover">
+        <button class="view-full-btn" onclick="openResume()">🔍 View Full</button>
+    </div>
+  </div>
+
+  <!-- Highlights -->
+  <h2 class="sec-title fade-up">Highlights</h2>
+
+  <div class="highlights-grid">
+    <div class="highlight-box fade-up">
+      <h3>Technical Skills</h3>
+      <ul>
+        <li>Python</li>
+        <li>SQL</li>
+        <li>Power BI</li>
+        <li>Streamlit</li>
+        <li>MySQL</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box fade-up">
+      <h3>Tools & Platforms</h3>
+      <ul>
+        <li>VS Code</li>
+        <li>Git & GitHub</li>
+        <li>Jupyter Notebook</li>
+        <li>Excel</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box fade-up">
+      <h3>Experience Summary</h3>
+      <ul>
+        <li>Graduate Apprentice — TGSRTC</li>
+        <li>Built KPI engines & automation workflows</li>
+        <li>Developed operational analytics dashboards</li>
+        <li>Designed end-to-end data systems</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box fade-up">
+      <h3>Core Strengths</h3>
+      <ul>
+        <li>Problem Solving</li>
+        <li>Attention to Detail</li>
+        <li>Data Visualization</li>
+        <li>Clean UI/UX Thinking</li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+
+<!-- Resume Modal -->
+<div class="resume-modal" id="resumeModal">
+  <div class="resume-frame">
+      <iframe src="assets/images/Thaduri_Omprakash_Resume.pdf"></iframe>
+      <button class="close-resume" onclick="closeResume()">✕</button>
+  </div>
+</div>
+
+<footer>
+  © Thaduri Omprakash — Portfolio
+</footer>
+
+<script src="js/common.js"></script>
+
+<script>
+function toggleMenu(){
+  document.querySelector('.hamburger').classList.toggle('active');
+  document.querySelector('.nav-menu').classList.toggle('open');
+}
+
+function openResume(){
+  document.getElementById("resumeModal").classList.add("open");
+}
+
+function closeResume(){
+  document.getElementById("resumeModal").classList.remove("open");
+}
+</script>
+
+<!-- Scroll Fade Animation -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".fade-up");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>

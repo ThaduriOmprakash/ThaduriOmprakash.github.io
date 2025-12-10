@@ -1,0 +1,444 @@
+/* ===================== PROJECTS PAGE LAYOUT ===================== */
+
+.projects-page {
+  padding-top: 120px;
+  width: 100%;
+}
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.projects-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #eaffff;
+  animation: fadeIn 1.2s ease;
+}
+
+.projects-subtext {
+  font-size: 16px;
+  color: #8dd3dd;
+  margin-top: 8px;
+}
+
+
+/* ===================== GRID (DESKTOP, TABLET, MOBILE) ===================== */
+
+.projects-grid {
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* default: 3 per row */
+  gap: 35px;
+}
+
+/* --- TABLETS (768px – 1110px) => 2 cards per row --- */
+@media (max-width: 1110px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- MOBILE (< 700px) => 1 card per row --- */
+@media (max-width: 700px) {
+  .projects-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+/* ===================== PROJECT CARD ===================== */
+
+.project-card {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 25px 28px;
+  backdrop-filter: blur(6px);
+
+  transition: 0.35s ease;
+  opacity: 1;
+  width: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: #00eaff;
+  box-shadow: 0 0 16px #00eaff50, 0 0 32px #00eaff35;
+}
+
+
+/* ===================== TITLE + DESCRIPTION ===================== */
+
+.project-title {
+  font-size: 22px;
+  font-weight: 650;
+  color: #0edbff;
+  margin-bottom: 12px;
+}
+
+.project-desc p {
+  color: #d4f9ff;
+  font-size: 15px;
+  margin: 6px 0;
+  line-height: 1.55;
+}
+
+
+/* ===================== TECH TAGS ===================== */
+
+.tech-row {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-tag {
+  padding: 6px 12px;
+  background: rgba(0, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  color: #bff9ff;
+  font-size: 13px;
+  border-radius: 8px;
+  text-transform: none;
+}
+
+
+/* ===================== BUTTONS ===================== */
+
+.project-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn.info {
+  background: rgba(0, 255, 255, 0.14);
+  color: #eaffff;
+}
+.btn.info:hover {
+  background: rgba(0, 255, 255, 0.33);
+}
+
+.btn.demo {
+  background: #00eaff;
+  color: #001018;
+  font-weight: 600;
+}
+.btn.demo:hover {
+  filter: brightness(1.15);
+}
+
+/* Disabled */
+.btn.disabled {
+  background: rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.45);
+  cursor: not-allowed;
+}
+
+
+/* ===================== MODAL ===================== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(3px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+  padding: 20px;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-card {
+  background: #05101a;
+  border-radius: 14px;
+  padding: 24px;
+  max-width: 700px;
+  width: 100%;
+  border: 1px solid rgba(0,255,255,0.25);
+  animation: fadeIn 0.4s ease;
+}
+
+/* MOBILE FIX — Modal full-width */
+@media (max-width: 600px) {
+  .modal-card {
+    padding: 18px;
+    border-radius: 12px;
+    max-width: 95%;
+  }
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: #77e6ff;
+  font-size: 20px;
+  cursor: pointer;
+  float: right;
+}
+
+.modal-info p {
+  color: #dff9ff;
+  margin-bottom: 8px;
+}
+
+.modal-footer {
+  text-align: right;
+  margin-top: 12px;
+}
+
+
+/* ===================== FADE ANIMATION ===================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* ===================== SCROLL FADE ANIMATIONS ===================== */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.fade-left {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(24px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.fade-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+/* Active when revealed */
+.fade-show {
+  opacity: 1 !important;
+  transform: translateX(0) translateY(0) scale(1) !important;
+}
+.btn.case {
+  background: rgba(0, 180, 255, 0.15);
+  border: 1px solid rgba(0, 210, 255, 0.35);
+  color: #dffaff;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.btn.case:hover {
+  background: rgba(0, 210, 255, 0.25);
+  box-shadow: 0 0 12px #00eaff60;
+  transform: translateY(-2px);
+}
+.case-study {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 10px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #dff9ff;
+}
+
+.case-study h2 {
+  color: #00eaff;
+  margin-bottom: 12px;
+}
+
+.case-study h3 {
+  color: #9deaff;
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+
+.case-study h4 {
+  color: #b7f7ff;
+  margin-top: 14px;
+}
+
+.case-study ul {
+  padding-left: 18px;
+}
+
+.btn.case {
+  background: rgba(0, 140, 255, 0.18);
+  color: #bfeaff;
+}
+
+.btn.case:hover {
+  background: rgba(0, 140, 255, 0.28);
+  box-shadow: 0 0 12px #00aaff55;
+}
+/* ===========================
+   CUSTOM SCROLLBAR (Neon UI)
+   =========================== */
+
+.case-study::-webkit-scrollbar {
+  width: 8px;                     /* slim scrollbar */
+}
+
+.case-study::-webkit-scrollbar-track {
+  background: rgba(0, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.case-study::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00eaff, #007a99);
+  border-radius: 10px;
+  box-shadow: 0 0 8px #00eaffaa;
+}
+
+.case-study::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #33f1ff, #0099b8);
+}
+
+/* Firefox scrollbar */
+.case-study {
+  scrollbar-width: thin;
+  scrollbar-color: #00eaff rgba(0, 255, 255, 0.08);
+}
+/* ===========================
+   AUTO-HIDE NEON SCROLLBAR
+   =========================== */
+
+.case-study {
+  overflow-y: auto;
+  scrollbar-width: none;       /* Firefox hide */
+}
+
+.case-study::-webkit-scrollbar {
+  width: 8px;
+  opacity: 0;                  /* hidden by default */
+  transition: opacity 0.25s ease;
+}
+
+.case-study:hover::-webkit-scrollbar {
+  opacity: 1;                  /* show on hover */
+}
+
+/* Neon thumb */
+.case-study::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00eaff, #007a99);
+  border-radius: 10px;
+  box-shadow: 0 0 8px #00eaffaa;
+}
+
+.case-study::-webkit-scrollbar-track {
+  background: rgba(0, 255, 255, 0.05);
+  border-radius: 10px;
+}
+.case-img {
+  width: 100%;
+  max-width: 650px;
+  border-radius: 14px;
+  margin: 18px 0;
+  display: block;
+  box-shadow: 0 0 18px #00eaff33;
+  border: 1px solid rgba(0, 255, 255, 0.25);
+}
+.case-img {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeImg 0.6s ease forwards;
+}
+
+@keyframes fadeImg {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ------------ INFO MODAL ------------- */
+
+.info-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #eaffff;
+  margin-bottom: 10px;
+}
+
+.info-summary {
+  color: #b6e9f5;
+  line-height: 1.55;
+  margin-bottom: 15px;
+}
+
+.info-section-title {
+  color: #00eaff;
+  font-size: 18px;
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+
+.info-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.info-list li::before {
+  content: "• ";
+  color: #00eaff;
+  font-weight: bold;
+}
+
+.info-list li {
+  margin: 6px 0;
+  color: #d7faff;
+}
+.modal-long-content {
+  max-height: 75vh;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* Auto-hide scrollbar */
+.modal-long-content::-webkit-scrollbar {
+  width: 7px;
+}
+
+.modal-long-content::-webkit-scrollbar-thumb {
+  background: #00eaff50;
+  border-radius: 10px;
+}
+
+.modal-long-content::-webkit-scrollbar-thumb:hover {
+  background: #00eaff;
+}
+
+.modal-long-content::-webkit-scrollbar-track {
+  background: transparent;
+}

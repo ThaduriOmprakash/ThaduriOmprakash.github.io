@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Portfolio</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/projects.css">
+</head>
+<body>
+
+<div id="particles"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="nav-left">
+    <h2 class="logo-name">Thaduri Omprakash</h2>
+    <p class="logo-tag muted">SQL • POWER BI • PYTHON</p>
+  </div>
+
+  <!-- Hamburger button -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav class="nav-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="Experience.html" class="nav-link">Experience</a>
+    <a href="projects.html" class="nav-link active">Projects</a>
+    <a href="skills.html" class="nav-link">Skills</a>
+    <a href="certificates.html" class="nav-link">Certificates</a>
+    <a href="resume.html" class="nav-link">Resume</a>
+    <a href="about.html" class="nav-link">About me</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </nav>
+</header>
+
+<main class="projects-page">
+
+  <div class="projects-header">
+    <div class="projects-title">Projects</div>
+    <p class="projects-subtext muted">Browse highlighted projects. Click Demo to watch workflow videos or Info for full details.</p>
+  </div>
+
+  <section class="projects-grid" id="projectsGrid">
+    <!-- Cards are populated dynamically from js/projects.js -->
+  </section>
+</main>
+
+<footer>
+  <p>© Thaduri Omprakash — Portfolio</p>
+</footer>
+
+<!-- Info modal -->
+<div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+
+    <!-- Video container -->
+    <div class="modal-body" id="modalBody">
+      <!-- Video or info injected here by JS -->
+    </div>
+
+    <div class="modal-footer">
+      <button id="modalCloseBtn" class="btn subtle">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/common.js"></script>
+<script>
+  function toggleMenu(){
+    document.querySelector('.hamburger').classList.toggle('active');
+    document.querySelector('.nav-menu').classList.toggle('open');
+  }
+</script>
+<script src="js/projects.js"></script>
+</body>
+</html>

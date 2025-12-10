@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Portfolio</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+
+<div id="particles"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="nav-left">
+    <h2 class="logo-name">Thaduri Omprakash</h2>
+    <p class="logo-tag muted">SQL • POWER BI • PYTHON</p>
+  </div>
+
+  <!-- Hamburger -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+
+  <nav class="nav-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="Experience.html" class="nav-link">Experience</a>
+    <a href="projects.html" class="nav-link">Projects</a>
+    <a href="skills.html" class="nav-link">Skills</a>
+    <a href="certificates.html" class="nav-link">Certificates</a>
+    <a href="resume.html" class="nav-link">Resume</a>
+    <a href="about.html" class="nav-link active">About me</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </nav>
+</header>
+
+<main class="about-main">
+
+  <!-- HERO / INTRO -->
+  <section class="about-hero">
+    <div class="about-inner">
+
+      <div class="about-left">
+        <div class="profile-wrap">
+          <img src="assets/images/profile1.png" alt="Thaduri Omprakash" class="profile-img">
+        </div>
+
+        <div class="quick-stats">
+          <div class="stat">
+            <div class="stat-num">1+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Projects</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-num">SQL • Power BI</div>
+            <div class="stat-label">Primary Slikks</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <h1 class="about-title">About Me</h1>
+
+        <div class="about-text">
+          <p>Hi, I’m <strong>Thaduri Omprakash</strong>  a passionate <strong>Data Analyst & BI Developer</strong> who loves turning raw data into clear, meaningful insights. I enjoy working where <strong>analytics, automation, and problem-solving</strong> meet — building systems that make everyday workflows faster, smarter, and more efficient .</p>
+
+          <p>I’m fascinated by how <strong>data, dashboards, and intelligent algorithms</strong> can transform operational performance across industries. Whether it’s automating KPIs , designing streamlined analytics pipelines , or crafting interactive dashboards , I focus on creating solutions that are <strong>scalable, reliable, and truly impactful</strong>.</p>
+
+          <p>Beyond analytics, I love exploring clean UI design , smooth digital interactions , and thoughtful user experience. My goal is to build tools that not only work beautifully — but also bring <strong>clarity, simplicity, and confidence</strong> to the people using them .</p>
+
+          <p>I’m always open to new ideas, collaborations, or projects that create <strong>real-world value through data and intelligent systems</strong>.</p>
+        </div>
+
+        <div class="about-cta">
+          <a href="projects.html" class="btn">See Projects</a>
+          <a href="contact.html" class="btn ghost">Let’s Talk</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<section class="education-section">
+
+  <h2 class="edu-heading">Education</h2>
+
+  <!-- ************** B.TECH ************** -->
+  <div class="edu-card fade-glow">
+    <h3 class="edu-title">B.Tech in Computer Science & Engineering</h3>
+
+    <div class="edu-row">
+      <img src="assets/images/college1.png" class="edu-svg" alt="">
+      <p class="edu-college">
+        <strong>Vidya Jyothi Institute of Technology and Science</strong> — Hyderabad, Telangana
+      </p>
+    </div>
+
+    <p class="edu-meta">
+      CGPA: <strong>8.2 / 10.0</strong>  
+    </p>
+
+    <p class="edu-meta">Completed | 2020 – 2024</p>
+  </div>
+
+  <!-- ************** INTERMEDIATE ************** -->
+  <div class="edu-card fade-glow">
+    <h3 class="edu-title">Intermediate (MPC)</h3>
+
+    <div class="edu-row">
+      <img src="assets/images/college.png" class="edu-svg" alt="">
+      <p class="edu-college">
+        <strong>Sri Gyatri Junior College</strong> — Hyderabad, Telangana
+      </p>
+    </div>
+
+    <p class="edu-meta">
+      Marks: <strong>907 / 1000</strong>
+    </p>
+
+    <p class="edu-meta">Completed | 2018 – 2020</p>
+  </div>
+
+  <!-- ************** SSC ************** -->
+  <div class="edu-card fade-glow">
+    <h3 class="edu-title">SSC — 10th Grade</h3>
+
+    <div class="edu-row">
+      <img src="assets/images/school.png" class="edu-svg" alt="">
+      <p class="edu-college">
+        <strong>Indian Academy High School</strong> — Hyderabad, Telangana
+      </p>
+    </div>
+
+    <p class="edu-meta">
+      GPA: <strong>8.2 / 10.0</strong>
+    </p>
+
+    <p class="edu-meta">Completed in 2018</p>
+  </div>
+
+</section>
+
+
+
+</main>
+
+<footer>
+  © 2025 Thaduri Omprakash
+</footer>
+
+<script src="js/common.js"></script>
+<script>
+  function toggleMenu(){
+    document.querySelector('.hamburger').classList.toggle('active');
+    document.querySelector('.nav-menu').classList.toggle('open');
+  }
+</script>
+<script>
+const cards = document.querySelectorAll(".fade-glow");
+
+function revealOnScroll(){
+  cards.forEach(card=>{
+    const rect = card.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 80){
+      card.classList.add("visible");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+</script>
+
+</body>
+</html>
